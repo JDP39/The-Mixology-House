@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cocktail House</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <header>
+        <img src="Images/Banner.png" alt="Banner" id="styled-image">
+        <a href="Main.html"><img src="Images/Logo.png" alt="Logo" id="logo"></a>
+        <a href="Favorites.html"><img src="Images/saved.png" alt="Favorites" id="Falogo"></a>
+        <nav>
+            <a href="Main.html">Home</a>
+            <a href="Equiptment.html">Equipment</a>
+            <a href="Recipies.html">Recipes</a>
+            <a href="Favorites.html">Favorites</a> 
+        </nav>
+        <h1 id="txt">Recipes</h1>
+    </header>
+
+    <main>
+        <div>
+		<br>
+            <input type="text" id="searchInput" placeholder="Search for a recipe" onchange="displayFilteredItems()">
+        </div>
+        <div class="mb-6 flex justify-end items-center px-6 sm:px-0">
+            <label for="sort-criteria" class="text-sm font-medium text-gray-700 mr-3">Sort By:</label>
+            <select id="sort-criteria" class="mt-1 block w-full sm:w-1/3 md:w-1/4 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm">
+                <option value="name-asc">Name (A-Z)</option>
+                <option value="name-desc">Name (Z-A)</option>
+                <option value="base-asc">Spirit (A-Z)</option>
+                <option value="base-desc">Spirit (Z-A)</option>
+            </select>
+        </div>
+
+    <div>
+        <br>
+        <div id="itemList"></div>
+    </div>
+    <script>
+        /*
+        (function(){
+          const container = document.getElementById('itemList');
+          if (!container) return;
+          container.addEventListener('click', function(e){
+            // ignore clicks directly on the empty container
+            if (e.target === container) return;
+            // Support Ctrl/Cmd+click to open in new tab
+            if (e.ctrlKey || e.metaKey) {
+              window.open('cocktail-page.html', '_blank');
+              return;
+            }
+            // Navigate to the cocktail page when any card/child is clicked
+            window.location.href = 'cocktail-page.html';
+          });
+        })();
+        */
+    </script>
+    </main>
+
+    <footer>
+        <nav>
+            <a href="Main.html">Home</a>
+            <a href="equiptment.html">Equipment</a>
+            <a href="recipies.html">Recipes</a>
+            <a href="favorites.html">Favorites</a>
+            <a href="References.html">References</a> 
+        </nav>
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    </footer>
+    <script src="Script.js"></script>
+    <script scr="Search.js"></script>
+</body>
+</html>

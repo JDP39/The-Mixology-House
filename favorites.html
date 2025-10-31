@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cocktail House</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <header>
+        <img src="Images/Banner.png" alt="Banner" id="styled-image">
+        <a href="Main.html"><img src="Images/Logo.png" alt="Logo" id="logo"></a>
+        <a href="Favorites.html"><img src="Images/saved.png" alt="Favorites" id="Falogo"></a>
+        <nav>
+            <a href="Main.html">Home</a>
+            <a href="Equiptment.html">Equipment</a>
+            <a href="Recipies.html">Recipes</a>
+            <a href="Favorites.html">Favorites</a>   
+        </nav>
+        
+    </header>
+
+    <h1>My Favorite Cocktails</h1>
+    <div id="favoritesContainer">
+      <p>Loading favorites...</p>
+    </div>
+    <script>
+    const recipes = [
+      { id: 1, name: "Spaghetti Carbonara", desc: "Classic Italian pasta.", image: "images/carbonara.jpg" },
+      { id: 2, name: "Chicken Curry", desc: "Spicy and rich curry.", image: "images/curry.jpg" },
+      { id: 3, name: "Chocolate Cake", desc: "Moist and delicious dessert.", image: "images/cake.jpg" },
+    ];
+
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    const favoriteRecipes = recipes.filter(recipe => favorites.includes(recipe.id));
+
+    const favList = document.getElementById("favorites-list");
+
+    if (favoriteRecipes.length === 0) {
+      favList.innerHTML = "<p>No favorites yet!</p>";
+    } else {
+      favoriteRecipes.forEach(recipe => {
+        const card = document.createElement("div");
+        card.className = "recipe-card";
+        card.innerHTML = `
+          <img src="${recipe.image}" alt="${recipe.name}">
+          <h2>${recipe.name}</h2>
+          <p>${recipe.desc}</p>
+          <a href="recipes.html#recipe-${recipe.id}">View Recipe</a>
+        `;
+        favList.appendChild(card);
+      });
+    }
+  </script>
+
+    </main>
+
+    <footer>
+        <nav>
+            <a href="Main.html">Home</a>
+            <a href="Equiptment.html">Equipment</a>
+            <a href="Recipies.html">Recipes</a>
+            <a href="Favorites.html">Favorites</a>
+            <a href="References.html">References</a> 
+        </nav>
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    </footer>
+    <script src="Script.js"></script>
+</body>
+</html>

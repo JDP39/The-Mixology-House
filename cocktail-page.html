@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cocktail House</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <header>
+        <img src="Images/Banner.png" alt="Banner" id="styled-image">
+        <a href="Main.html"><img src="Images/Logo.png" alt="Logo" id="logo"></a>
+        <a href="Favorites.html"><img src="Images/saved.png" alt="Favorites" id="Falogo"></a>
+        <nav>
+            <a href="Main.html">Home</a>
+            <a href="Equiptment.html">Equipment</a>
+            <a href="Recipies.html">Recipes</a>
+            <a href="Favorites.html">Favorites</a>   
+        </nav>
+        <p id="txt1"></p>
+    </header>
+
+    <main>
+        <div id="cocktailDetailContainer">
+            <h1 id="txtE">Aperol Spritz</h1> 
+            <h2 align="center">Base Spirit: <strong>Prosecco</strong></h2><br>
+            
+
+
+            <div class="cocktail-table">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><img id="cocktail-image" class="cocktail-image" src="Images/Cocktails/aperol-spritz.png" alt="Aperol Spritz Image"></td>
+                            <td><ul>
+                                <button onclick="addToFavorites(item)">Add to Favorites</button>
+
+    <script>
+    async function addToFavorites(item) {
+      try {
+        // Get existing favorites
+        const result = await window.storage.get('favorites');
+        const favorites = result ? JSON.parse(result.value) : [];
+        
+        // Check if already in favorites
+        if (!favorites.find(fav => fav.Cocktail_ID === item.Cocktail_ID)) {
+          favorites.push(item);
+          await window.storage.set('favorites', JSON.stringify(favorites));
+          alert('Added to favorites!');
+        } else {
+          alert('Already in favorites!');
+        }
+      } catch (error) {
+        console.error('Error adding to favorites:', error);
+        alert('Failed to add to favorites');
+      }
+    }
+    </script>
+                                <p id="txt2">Ingredients:</p>
+                                <li>90 ml Prosecco</li>
+                                <li>60 ml Aperol</li>
+                                <li>30 ml Soda Water</li>
+                            </ul> <br><br>
+                            <p id="txt2">Instructions:</p>
+                            <ol>
+                                <li>Fill a large wine glass with ice cubes.</li>
+                                <li>Add Prosecco, Aperol, and soda water.</li>
+                                <li>Gently stir to combine.</li>
+                                <li>Garnish with an orange slice.</li>
+                                </ol>
+                            </td>           
+                        </tr>
+
+                        <tr>
+                            <td><p>This vibrant Italian aperitivo is the undisputed champion of sundowners,<br> famous for its bright orange hue and refreshing, bittersweet flavour. It perfectly<br> combines the zest of prosecco with the herbal complexity of Aperol, topped<br> with a dash of sparkling soda water. Served in a large wine glass filled with ice,<br> it is incredibly easy to prepare and enjoy. Its low ABV makes it ideal for day-drinking<br> or as a palate-opener before a meal. The Aperol Spritz embodies effortless, continental<br> elegance and a sunny, relaxed atmosphere.</p></td>
+                        </tr>
+                        <tr>
+                            <td>    </td>
+                        </tr>
+                        <tr>
+                            <td>     </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <nav>
+            <a href="Main.html">Home</a>
+            <a href="equiptment.html">Equipment</a>
+            <a href="recipies.html">Recipes</a>
+            <a href="favorites.html">Favorites</a>
+            <a href="References.html">References</a>
+        </nav>
+        <div id="google_translate_element"></div>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    </footer>
+    <script src="Data.js"></script>
+</body>
+</html>

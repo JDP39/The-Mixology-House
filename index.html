@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Verification</title>
+    <script src="   "></script>
+    <script src="Script.js" defer></script>
+    <style scr="Style.css"></style>
+</head>
+    <body id="ageBody" class="flex items-center justify-center min-h-screen bg-gray-100 p-4">
+        <img src="Images/makingcocktails.jpg" alt="Background Image" class="fixed inset-0 w-full h-full object-cover z-0 opacity-95">
+        <div class="bg-white opacity-95 p-8 rounded-xl shadow-2xl w-full max-w-md text-center">
+            <h1 class="text-3xl font-bold text-gray-900 mb-4">Age Verification</h1>
+            <p class="text-gray-600 mb-6">Please enter your date of birth to continue.</p>  
+            <form id="ageForm" name="ageForm" class="space-y-4">
+                <div class="Verification">
+                    <label class="block text-gray-700 font-medium mb-1">Date of Birth</label>
+                    <div class="flex space-x-2">
+                        <!-- Day Input -->
+                        <input type="number" id="day" name="day" placeholder="DD" required min="1" max="31"
+                            class="w-1/3 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-200 text-center">
+                        <!-- Month Input -->
+                        <input type="number" id="month" name="month" placeholder="MM" required min="1" max="12"
+                            class="w-1/3 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-200 text-center">
+                        <!-- Year Input -->
+                        <input type="number" id="year" name="year" placeholder="YYYY" required min="1900" 
+                            class="w-1/3 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-200 text-center">
+                    </div>
+                </div>
+                
+                <button type="submit" 
+                        class="w-full bg-indigo-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition duration-200">
+                    Submit
+                </button>
+            </form>
+            
+            <div id="messageBox" class="mt-6 text-sm p-4 rounded-lg hidden"></div>
+        </div>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="Script.js"></script>
+    </body>
+</html>
